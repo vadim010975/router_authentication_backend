@@ -38,25 +38,25 @@ const news = [
   {
     id: uuid.v4(),
     title: faker.lorem.words(),
-    image: "https://placeimg.com/640/480/nature",
+    image: "https://loremflickr.com/640/480/nature",
     content: faker.lorem.paragraph(),
   },
   {
     id: uuid.v4(),
     title: faker.lorem.words(),
-    image: "https://placeimg.com/640/480/arch",
+    image: "https://loremflickr.com/640/480/arch",
     content: faker.lorem.paragraph(),
   },
   {
     id: uuid.v4(),
     title: faker.lorem.words(),
-    image: "https://placeimg.com/640/480/tech",
+    image: "https://loremflickr.com/640/480/tech",
     content: faker.lorem.paragraph(),
   },
   {
     id: uuid.v4(),
     title: faker.lorem.words(),
-    image: "https://placeimg.com/640/480/sepia",
+    image: "https://loremflickr.com/640/480/sepia",
     content: faker.lorem.paragraph(),
   },
 ];
@@ -100,6 +100,8 @@ app.post("/auth", async (req, res) => {
 
 app.use("/private**", bearerAuth);
 app.get("/private/me", async (req, res) => {
+  console.log(req.body);
+  console.log(req.url);
   try {
     res.send(
       JSON.stringify({
